@@ -1,6 +1,7 @@
 
 const express = require("express")
 
+const path = require("path")
 
 const app = express();
 
@@ -8,12 +9,15 @@ const app = express();
 
 /* get is a method to */
 app.get("/",(req,res)=>{
-    res.send("<h1> Helloe World </h1>")
+    // res.send("<h1> Helloe World </h1>")
+    
+    /* We Have to send it like this because for send file there is requitement of absolute path not relative*/
+    res.sendFile(path.join(__dirname+"/index.html"));
 })
 
 // now we will use this to send the data to another url , from req.body we get all the data which is present at the frontend . Suppose there is field c
 app.post("/",(req,res)=>{
-
+  
 })
 
 app.listen(4040,()=>{
