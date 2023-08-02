@@ -1,9 +1,9 @@
 
 const express = require("express")
+const app = express();
 
 const path = require("path")
-
-const app = express();
+const bodyParser = require("body-parser");
 
 // there are 4 methods in which each coreesponds to one of the CRUD operation Post -> Create(we can send the data using that url) , Get -> Read(and by read we mean from frontend in this case as we are here preent in thr backend) , PUT -> Update ( we can update the data using that url), Delete -> delete
 
@@ -36,5 +36,6 @@ NOTES :
     
     4) res.send("DONE"); If you even send it without the tags it gives ERROR : cannot get POST request (so in future if you get such error just know that there is somthing wrong syntactically)
     5) console.log(req.body); --> we do not get any output as undefined  because we need a middelware to parse the data being sent
+    6) In order to get data from the frontend in the form we have to give action = "link to the post request path" method = "GET/POST/PUT/DELETE e.g <form action="/api/v1/login" method="POST">"
 
 */
