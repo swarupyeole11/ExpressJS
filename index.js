@@ -9,7 +9,7 @@ app.use(express.json())
 const router = require('./UserRoutes')
 
 app.use(bodyParser.urlencoded({extended : false}))
-app.use(router)
+app.use("/api/v1",router)
 
 // there are 4 methods in which each coreesponds to one of the CRUD operation Post -> Create(we can send the data using that url) , Get -> Read(and by read we mean from frontend in this case as we are here preent in thr backend) , PUT -> Update ( we can update the data using that url), Delete -> delete 
 // this is true in a limited sense because you can also use the GET to send data from the frontend but it is unsafe since it shares the data in the link
